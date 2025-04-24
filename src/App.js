@@ -1,18 +1,15 @@
 import './App.css';
 import React from "react";
-// import {BrowserRouter, Routes, Route} from "react-router-dom";
 import { HashRouter, Routes, Route } from "react-router-dom";
 import Toolbar from "./components/Toolbar";
 import IndexPage from "./pages/IndexPage";
 import CVPage from "./pages/CVPage";
 import Footer from "./components/Footer";
 
-
 function App() {
-
     return (
         <div className="flex flex-col items-center bg-primary">
-            <HashRouter HashRouter>
+            <HashRouter>
                 <Toolbar />
                 <div className="w-full bg-primary">
                     <Routes>
@@ -23,8 +20,7 @@ function App() {
                 <Footer />
             </HashRouter>
         </div>
-    )
-        ;
+    );
 }
 
 export default App;
