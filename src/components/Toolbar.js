@@ -62,22 +62,22 @@ return (
                     <div className="hidden space-x-1 tracking-wider text-primary-content md:flex">
 
                         <a href="#education"
-                            onClick={() => scrollAnimate("education")}
+                             onClick={(e) => { e.preventDefault(); scrollAnimate("education")}}
                             className="px-4 py-1.5 text-lg font-bold transition-all duration-300 border-2 rounded-full group border-transparent hover:border-secondary">
                             Išsilavinimas
                         </a>
                         <a href="#work"
-                            onClick={() => scrollAnimate("work")}
+                            onClick={(e) => { e.preventDefault(); scrollAnimate("work")}}
                             className="px-4 py-1.5 text-lg font-bold transition-all duration-300 border-2 rounded-full group border-transparent hover:border-secondary">
                             Patirtis
                         </a>
                         <a href="#projects"
-                            onClick={() => scrollAnimate("projects")}
+                           onClick={(e) => { e.preventDefault();  scrollAnimate("projects")}}
                             className="px-4 py-1.5 text-lg font-bold transition-all duration-300 border-2 rounded-full group border-transparent hover:border-secondary">
                             Projektai
                         </a>
                         <a href="#contacts"
-                            onClick={() => scrollAnimate("contacts")}
+                          onClick={(e) => { e.preventDefault(); scrollAnimate("contacts")}}
                             className="px-4 py-1.5 text-lg font-bold transition-all duration-300 border-2 rounded-full group border-transparent hover:border-secondary">
                             Kontaktai
                         </a>
