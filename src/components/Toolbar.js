@@ -115,19 +115,19 @@ return (
                 {open && (
                     <div className="p-4 space-y-3 md:hidden rounded-b-2xl">
 
-                        <a onClick={() => setOpen(false)} href="#education"
+                        <a onClick={() => setOpen(false)} href="education"
                             className="block pb-2 m-1 font-medium border-2 border-transparent rounded-sm text-primary-content md:p-0 hover:border-b-secondary">
                             Išsilavinimas
                         </a>
-                        <a onClick={() => setOpen(false)} href="#work"
+                        <a onClick={() => setOpen(false)} href="work"
                             className="block pb-2 m-1 font-medium border-2 border-transparent rounded-sm text-primary-content md:p-0 hover:border-b-secondary">
                             Patirtis
                         </a>
-                        <a onClick={() => setOpen(false)} href="#projects"
+                        <a onClick={() => setOpen(false)} href="projects"
                             className="block pb-2 m-1 font-medium border-2 border-transparent rounded-sm text-primary-content md:p-0 hover:border-b-secondary">
                             Projektai
                         </a>
-                        <a onClick={() => setOpen(false)} href="#contacts"
+                        <a onClick={() => setOpen(false)} href="contacts"
                             className="block pb-2 m-1 font-medium border-2 border-transparent rounded-sm text-primary-content md:p-0 hover:border-b-secondary">
                             Kontaktai
                         </a>
