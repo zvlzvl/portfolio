@@ -1,8 +1,10 @@
 # Portfolio - Živilė Vibrė
 
-This is a personal portfolio project built using **React** and **Tailwind CSS**. It showcases my skills, projects, and experience as a Full-Stack Developer.
+🚀 This is a personal portfolio project built using **React** and **Tailwind CSS**. It showcases my skills, projects, and experience as a Full-Stack Developer.
 
-## Features
+## 🌐 Live Demo
+[Click here to view](https://your-username.github.io/zvPortfolio)
+## ✨ Features
 
 - **Responsive Design**: Fully responsive layout optimized for all devices.
 - **Interactive Navigation**: Smooth scrolling and dynamic navigation for a seamless user experience.
