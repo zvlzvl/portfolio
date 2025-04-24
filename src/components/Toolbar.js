@@ -52,7 +52,7 @@ return (
             <div className="mx-auto max-w-[1150px]">
                 <nav className="flex items-center justify-between p-4">
                     {/* Logo Section */}
-                    <a href="#about" onClick={() => scrollAnimate("#about")}>
+                    <a href="#about" onClick={() => scrollAnimate("about")}>
                         <img
                             className="transition-transform w-28 hover:scale-110"
                             src={logo}
@@ -62,22 +62,22 @@ return (
                     <div className="hidden space-x-1 tracking-wider text-primary-content md:flex">
 
                         <a href="#education"
-                            onClick={() => scrollAnimate("#education")}
+                            onClick={() => scrollAnimate("education")}
                             className="px-4 py-1.5 text-lg font-bold transition-all duration-300 border-2 rounded-full group border-transparent hover:border-secondary">
                             Išsilavinimas
                         </a>
                         <a href="#work"
-                            onClick={() => scrollAnimate("#work")}
+                            onClick={() => scrollAnimate("work")}
                             className="px-4 py-1.5 text-lg font-bold transition-all duration-300 border-2 rounded-full group border-transparent hover:border-secondary">
                             Patirtis
                         </a>
                         <a href="#projects"
-                            onClick={() => scrollAnimate("#projects")}
+                            onClick={() => scrollAnimate("projects")}
                             className="px-4 py-1.5 text-lg font-bold transition-all duration-300 border-2 rounded-full group border-transparent hover:border-secondary">
                             Projektai
                         </a>
                         <a href="#contacts"
-                            onClick={() => scrollAnimate("#contacts")}
+                            onClick={() => scrollAnimate("contacts")}
                             className="px-4 py-1.5 text-lg font-bold transition-all duration-300 border-2 rounded-full group border-transparent hover:border-secondary">
                             Kontaktai
                         </a>
