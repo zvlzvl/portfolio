@@ -52,7 +52,7 @@ return (
             <div className="mx-auto max-w-[1150px]">
                 <nav className="flex items-center justify-between p-4">
                     {/* Logo Section */}
-                    <a href="#about" onClick={() => scrollAnimate("about")}>
+                    <a href="#about" onClick={(e) => { e.preventDefault(); scrollAnimate("about"); }}>
                         <img
                             className="transition-transform w-28 hover:scale-110"
                             src={logo}
