@@ -2,29 +2,33 @@
 import logo from "../assets/zvpilka.png";
 
 const Footer = () => {
-    const scrollAnimate = (targetHash) => {
+    const scrollAnimate = (targetId) => {
+        const targetElement = document.getElementById(targetId);
+        console.log(targetElement);
 
-        setTimeout(() => {
-            if (targetHash !== "none") {
-                window.history.replaceState(null, null, targetHash);
-            }
+        if (targetElement) {
+            targetElement.scrollIntoView({behavior: "smooth"});
         }
-        )
     };
+
     return (
         <footer className="w-full p-6 border-t bg-primary-content text-base-content border-primary">
             <div className="flex flex-col items-center justify-between w-full mx-auto max-w-[1150px]">
                 {/* Logo and Navigation */}
                 <div className="flex flex-col items-center justify-center w-full gap-4 px-4 pb-4 mb-4 border-b md:justify-between md:flex-row border-secondary">
-                    <a href="/#about" onClick={() => scrollAnimate("#about")}>
+                    <a href="#about" onClick={(e) => {e.preventDefault(); scrollAnimate("about");}}>
                         <img src={logo} alt="logo" className="transition-transform h-14 hover:scale-105" />
                     </a>
 
                     <nav className="flex flex-col items-center space-y-2 text-lg font-medium tracking-wide md:flex-row md:space-y-0 md:space-x-1">
-                        <a onClick={() => scrollAnimate("#education")} className="px-4 md:py-1.5 text-lg font-bold transition-all duration-300 border-2 rounded-full group border-transparent md:hover:border-secondary hover:underline decoration-secondary md:decoration-transparent underline-offset-8 decoration-1" href="/#education">Išsilavinimas</a>
-                        <a onClick={() => scrollAnimate("#work")} className="px-4 md:py-1.5 text-lg font-bold transition-all duration-300 border-2 rounded-full group border-transparent md:hover:border-secondary hover:underline decoration-secondary md:decoration-transparent underline-offset-8 decoration-1" href="/#work">Patirtis</a>
-                        <a onClick={() => scrollAnimate("#projects")} className="px-4 md:py-1.5 text-lg font-bold transition-all duration-300 border-2 rounded-full group border-transparent md:hover:border-secondary hover:underline decoration-secondary md:decoration-transparent underline-offset-8 decoration-1" href="/#projects">Projektai</a>
-                        <a onClick={() => scrollAnimate("#contacts")} className="px-4 md:py-1.5 text-lg font-bold transition-all duration-300 border-2 rounded-full group border-transparent md:hover:border-secondary hover:underline decoration-secondary md:decoration-transparent underline-offset-8 decoration-1" href="/#contacts">Kontaktai</a>
+                        <a href="#education"
+                            onClick={(e) => {e.preventDefault(); scrollAnimate("education")}} className="px-4 md:py-1.5 text-lg font-bold transition-all duration-300 border-2 rounded-full group border-transparent md:hover:border-secondary hover:underline decoration-secondary md:decoration-transparent underline-offset-8 decoration-1" href="/#education">Išsilavinimas</a>
+                        <a href="#work"
+                            onClick={(e) => {e.preventDefault(); scrollAnimate("work")}} className="px-4 md:py-1.5 text-lg font-bold transition-all duration-300 border-2 rounded-full group border-transparent md:hover:border-secondary hover:underline decoration-secondary md:decoration-transparent underline-offset-8 decoration-1" href="/#work">Patirtis</a>
+                        <a href="#projects"
+                            onClick={(e) => {e.preventDefault(); scrollAnimate("projects")}} className="px-4 md:py-1.5 text-lg font-bold transition-all duration-300 border-2 rounded-full group border-transparent md:hover:border-secondary hover:underline decoration-secondary md:decoration-transparent underline-offset-8 decoration-1" href="/#projects">Projektai</a>
+                        <a href="#contacts"
+                            onClick={(e) => {e.preventDefault(); scrollAnimate("contacts")}} className="px-4 md:py-1.5 text-lg font-bold transition-all duration-300 border-2 rounded-full group border-transparent md:hover:border-secondary hover:underline decoration-secondary md:decoration-transparent underline-offset-8 decoration-1" href="/#contacts">Kontaktai</a>
                     </nav>
                 </div>
 
