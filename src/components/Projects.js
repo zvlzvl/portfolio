@@ -1,4 +1,4 @@
-import React, {useEffect, useRef, useState} from "react";
+import React from "react";
 import traficeroImg from "../../src/assets/traficero/traficero.png";
 import bitmanijaImg from "../../src/assets/bitmanija/bitmanija.png";
 import {useInView} from "react-intersection-observer";
@@ -13,10 +13,10 @@ const ProjectCard = () => {
         threshold: 0.4,
         rootMargin: "-10% 0px -10% 0px",
     });
-    const [ref3, inView3] = useInView({
-        threshold: 0.4,
-        rootMargin: "-10% 0px -10% 0px",
-    });
+    // const [ref3, inView3] = useInView({
+    //     threshold: 0.4,
+    //     rootMargin: "-10% 0px -10% 0px",
+    // });
 
 
     return (

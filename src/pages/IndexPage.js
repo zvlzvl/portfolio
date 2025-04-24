@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 
 import bit from "../assets/baltic_talents_academy_logo.jpg";
 import codeAcademy from "../assets/codeacademylt_logo.jpeg";
@@ -14,7 +14,7 @@ const IndexPage = () => {
     return (
         <main class="bg-primary ">
             {/* <!-- HERO --> */}
-            <section className="px-4 mx-auto  text-primary-content pt-28" id="about">
+            <section className="px-4 mx-auto text-primary-content pt-28" id="about">
                 <div className="flex flex-col w-full px-6 mx-auto max-w-[1150px]">
                     <h4 className="text-4xl italic font-medium tracking-[7px] leading-[1.05em] my-3">Živilė Vibrė</h4>
                     <div className="bg-secondary w-[270px] h-[3px] mb-4"></div>
@@ -108,7 +108,7 @@ const IndexPage = () => {
 
             </section>
             <section className="w-full dark-right-up" id="projects"></section>
-           
+
             {/* PROJECTS */}
             <Projects />
 
