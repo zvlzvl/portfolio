@@ -1,7 +1,7 @@
 
 import {useState, useEffect} from "react";
 import logo from "../assets/zlogo.png";
-import {Loader2, StethoscopeIcon} from 'lucide-react'; // Spinner icon, optional if you use Lucide or can use emoji/spinner SVG
+import {Loader2} from 'lucide-react'; // Spinner icon, optional if you use Lucide or can use emoji/spinner SVG
 const Toolbar = () => {
     const [open, setOpen] = useState(false);
     const [isActive, setIsActive] = useState(false);
