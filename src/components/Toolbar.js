@@ -52,7 +52,7 @@ const Toolbar = () => {
                 <div className="mx-auto max-w-[1150px]">
                     <nav className="flex items-center justify-between p-4">
                         {/* Logo Section */}
-                        <a href="#about" onClick={(e) => {e.preventDefault(); scrollAnimate("about");}}>
+                        <a href="#about" onClick={(e) => {e.preventDefault(); scrollAnimate("about"); setOpen(!open)}}>
                             <img
                                 className="transition-transform w-28 hover:scale-110"
                                 src={logo}
@@ -134,7 +134,7 @@ const Toolbar = () => {
                                 className="block pb-2 m-1 font-medium border-2 border-transparent rounded-sm text-primary-content md:p-0 hover:border-b-secondary">
                                 Kontaktai
                             </a>
-                            <a onClick={(e) => {e.preventDefault(); setOpen(false)}} href="CV_Zivile_Vibre.pdf" download
+                            <a onClick={() => setOpen(false)} href="CV_Zivile_Vibre.pdf" download
                                 className="px-4  text-lg font-bold transition-all duration-300 cursor-pointer text-secondary group  w-[100px] ">
                                 <div class="flex items-center gap-1">
                                     CV
