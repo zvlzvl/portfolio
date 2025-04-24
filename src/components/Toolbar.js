@@ -1,7 +1,5 @@
 
 import {useState, useEffect} from "react";
-
-
 import logo from "../assets/zlogo.png";
 
 const Toolbar = () => {
@@ -14,6 +12,7 @@ const Toolbar = () => {
         } else {
             setIsActive(false);
         }
+        
         const handleScroll = () => {
             // When scrolling past 100px from top, add 'active' class
             if (window.scrollY > 100) {
@@ -30,16 +29,17 @@ const Toolbar = () => {
         return () => window.removeEventListener('scroll', handleScroll);
     }, [open]);
 
-
-
-    const scrollAnimate = (targetHash) => {
-        setTimeout(() => {
-            if (targetHash !== "none") {
-                window.history.replaceState(null, null, targetHash);
-            }
+    const scrollAnimate = (targetId) => {
+        const targetElement = document.getElementById(targetId);
+        console.log(targetElement);
+        
+        if (targetElement) {
+            targetElement.scrollIntoView({ behavior: "smooth" });
         }
-        )
     };
+    
+
+
 
     
 
@@ -97,7 +97,6 @@ return (
                             </div>
                         </a>
                     </div>
-
                     {/* Mobile */}
                     <button onClick={() => setOpen(!open)} className="p-2 text-primary-content md:hidden">
                         {open ? (
