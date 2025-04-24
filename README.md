@@ -2,8 +2,8 @@
 
 🚀 This is a personal portfolio project built using **React** and **Tailwind CSS**. It showcases my skills, projects, and experience as a Full-Stack Developer.
 
-## 🌐 Live Demo
-[Click here to view](https://your-username.github.io/zvPortfolio)
+## 🌐 Live Demo [Click here to view](https://zvlzvl.github.io/zvPortfolio)
+
 ## ✨ Features
 
 - **Responsive Design**: Fully responsive layout optimized for all devices.
