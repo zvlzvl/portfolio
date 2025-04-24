@@ -13,8 +13,8 @@ function App() {
                 <Toolbar />
                 <div className="w-full bg-primary">
                     <Routes>
-                        <Route path="zvPortfolio/" element={<IndexPage />} />
-                        <Route path="zvPortfolio/cv" element={<CVPage />} />
+                        <Route path="/" element={<IndexPage />} />
+                        <Route path="/cv" element={<CVPage />} />
                     </Routes>
                 </div>
                 <Footer />
