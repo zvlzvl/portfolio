@@ -1,10 +1,29 @@
 
 import {useState, useEffect} from "react";
 import logo from "../assets/zlogo.png";
-
+import {Loader2, StethoscopeIcon} from 'lucide-react'; // Spinner icon, optional if you use Lucide or can use emoji/spinner SVG
 const Toolbar = () => {
     const [open, setOpen] = useState(false);
     const [isActive, setIsActive] = useState(false);
+    const [isDownloading, setIsDownloading] = useState(false);
+
+    const handleDownload = (e) => {
+
+        setIsDownloading(true);
+        // Create a temporary <a> tag to trigger download manually
+        const link = document.createElement('a');
+        link.href = 'CV_Zivile_Vibre.pdf';
+        link.download = 'CV_Zivile_Vibre.pdf';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+
+        // Reset spinner after a few seconds
+        setTimeout(() => {
+            setIsDownloading(false);
+        }, 2000); // Simulate file download time
+        setOpen(false);
+    };
 
     useEffect(() => {
         if (open) {
@@ -80,18 +99,22 @@ const Toolbar = () => {
                                 className="px-4 py-1.5 text-lg font-bold transition-all duration-300 border-2 rounded-full group border-transparent hover:border-secondary">
                                 Kontaktai
                             </a>
-                            <a href="CV_Zivile_Vibre.pdf" download
+                            <a onClick={handleDownload} href="CV_Zivile_Vibre.pdf" download
                                 className="text-secondary px-4 py-1.5 rounded-full text-lg font-bold transition-all duration-300 group hover:bg-secondary hover:text-primary">
                                 <div class="flex items-center justify-center gap-1">
-                                    CV
-                                    <svg stroke="currentColor" fill="currentColor" className="" width="16px" height="16px" viewBox="0 0 29.978 29.978" preserveAspectRatio="xMidYMid">
-                                        <g id="SVGRepo_bgCarrier" strokeWidth="0" />
-                                        <g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round" />
-                                        <g id="SVGRepo_iconCarrier"><g>
-                                            <path d="M25.462,19.105v6.848H4.515v-6.848H0.489v8.861c0,1.111,0.9,2.012,2.016,2.012h24.967c1.115,0,2.016-0.9,2.016-2.012 v-8.861H25.462z"></path> <path d="M14.62,18.426l-5.764-6.965c0,0-0.877-0.828,0.074-0.828s3.248,0,3.248,0s0-0.557,0-1.416c0-2.449,0-6.906,0-8.723 c0,0-0.129-0.494,0.615-0.494c0.75,0,4.035,0,4.572,0c0.536,0,0.524,0.416,0.524,0.416c0,1.762,0,6.373,0,8.742 c0,0.768,0,1.266,0,1.266s1.842,0,2.998,0c1.154,0,0.285,0.867,0.285,0.867s-4.904,6.51-5.588,7.193 C15.092,18.979,14.62,18.426,14.62,18.426z"></path>
-                                        </g>
-                                        </g>
-                                    </svg>
+                                    {isDownloading ? (
+                                        <>
+                                            <Loader2 className="w-5 h-5 mt-1 animate-spin" />
+                                        </>
+                                    ) : (
+                                        <>
+                                            CV
+                                            <svg stroke="currentColor" fill="currentColor" width="16px" height="16px" viewBox="0 0 29.978 29.978">
+                                                <path d="M25.462,19.105v6.848H4.515v-6.848H0.489v8.861c0,1.111,0.9,2.012,2.016,2.012h24.967c1.115,0,2.016-0.9,2.016-2.012v-8.861H25.462z"></path>
+                                                <path d="M14.62,18.426l-5.764-6.965c0,0-0.877-0.828,0.074-0.828s3.248,0,3.248,0s0-0.557,0-1.416c0-2.449,0-6.906,0-8.723c0,0-0.129-0.494,0.615-0.494c0.75,0,4.035,0,4.572,0c0.536,0,0.524,0.416,0.524,0.416c0,1.762,0,6.373,0,8.742c0,0.768,0,1.266,0,1.266s1.842,0,2.998,0c1.154,0,0.285,0.867,0.285,0.867s-4.904,6.51-5.588,7.193C15.092,18.979,14.62,18.426,14.62,18.426z"></path>
+                                            </svg>
+                                        </>
+                                    )}
 
                                 </div>
                             </a>
