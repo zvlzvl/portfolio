@@ -1,5 +1,5 @@
 {
-  "name": "zvPortfolio",
+  "name": "portfolio",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -60,5 +60,5 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "homepage": "https://zvlzvl.github.io/zvPortfolio"
+  "homepage": "https://zvlzvl.github.io/portfolio"
 }
