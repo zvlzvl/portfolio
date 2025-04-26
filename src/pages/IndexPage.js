@@ -15,17 +15,18 @@ const IndexPage = () => {
         <main class="bg-primary ">
             {/* <!-- HERO --> */}
             <section className="px-4 mx-auto text-primary-content pt-28" id="about">
-                <div className="flex flex-col w-full px-6 mx-auto max-w-[1150px]">
-                    <h4 className="text-4xl italic font-medium tracking-[7px] leading-[1.05em] my-3">Živilė Vibrė</h4>
-                    <div className="bg-secondary w-[270px] h-[3px] mb-4"></div>
-                    <h1 className="flex flex-col">
+                <div className="flex flex-col w-full px-6 mx-auto max-w-[1150px] ">
+                    <h1>
+                        <div className="relative inline-block text-3xl md:text-4xl italic font-medium tracking-[7px] leading-[1.05em] my-3 font-medium transition-all duration-300 text-primary-content group">
+                            Živilė Vibrė
+                            <span className="absolute  bg-secondary left-0 top-[80%] w-[100%] h-[3px] text-3xl italic font-medium tracking-[7px] leading-[1.05em] my-3"></span>
+                        </div>
                         <div className="flex items-end gap-3">
-                            <div className="text-4xl font-thin md:text-6xl">Full stack</div>
+                            <div className="text-4xl font-thin md:text-6xl">Full-stack</div>
                             <div className="hidden text-4xl font-medium sm:flex md:text-6xl"> Programuotoja </div>
                         </div>
                         <div className="text-4xl font-medium sm:hidden"> Programuotoja </div>
-                        <div className="mt-2 text-3xl font-light md:text-4xl">jaunesnioji-vidutinio lygio</div>
-
+                        <div className="mt-2 text-xl font-light sm:text-3xl md:text-4xl">(jaunesnioji-vidutinio lygio)</div>
                     </h1>
                     <p className="mt-4 text-lg">
                         Esu jaunesnioji programuotoja. Prieš 3 metus atradau IT sritį ir buvau labai

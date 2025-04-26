@@ -6,7 +6,7 @@ const Experience = () => {
         <div className="w-full">
         <div className="pb-8 text-center md:text-left">
             <h2 className="relative inline-block mx-auto text-5xl font-medium transition-all duration-300 text-primary-content group">IT patirtis
-                <span className="absolute left-[33%]  md:left-0 top-[116%] w-[33%] h-[3px] bg-secondary transition-all duration-300 "></span>
+                <span className="absolute left-[33%] md:left-0 top-[116%] w-[33%] h-[3px] bg-secondary transition-all duration-300 "></span>
             </h2>
         </div>
 
