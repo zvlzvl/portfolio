@@ -73,7 +73,7 @@ const Toolbar = () => {
                         {/* Logo Section */}
                         <a href="#about" onClick={(e) => {e.preventDefault(); scrollAnimate("about"); setOpen(!open)}}>
                             <img
-                                className="transition-transform w-28 hover:scale-110"
+                                className="w-24 transition-transform md:w-28 hover:scale-110"
                                 src={logo}
                                 alt="Logo"
                             />
@@ -122,11 +122,11 @@ const Toolbar = () => {
                         {/* Mobile */}
                         <button onClick={() => setOpen(!open)} className="p-2 text-primary-content md:hidden">
                             {open ? (
-                                <svg className="w-6 h-6" viewBox="0 0 24 24">
+                                <svg className="w-8 h-8" viewBox="0 0 24 24">
                                     <path stroke="currentColor" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
                                 </svg>
                             ) : (
-                                <svg className="w-6 h-6" viewBox="0 0 24 24">
+                                <svg className="w-8 h-8" viewBox="0 0 24 24">
                                     <path stroke="currentColor" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
                                 </svg>
                             )}

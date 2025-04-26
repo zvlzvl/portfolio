@@ -17,7 +17,7 @@ const Footer = () => {
                 {/* Logo and Navigation */}
                 <div className="flex flex-col items-center justify-center w-full gap-4 px-4 pb-4 mb-4 border-b md:justify-between md:flex-row border-secondary">
                     <a href="#about" onClick={(e) => {e.preventDefault(); scrollAnimate("about");}}>
-                        <img src={logo} alt="logo" className="transition-transform h-14 hover:scale-105" />
+                        <img src={logo} alt="logo" className="w-24 transition-transform md:w-28 hover:scale-105" />
                     </a>
 
                     <nav className="flex flex-col items-center space-y-2 text-lg font-medium tracking-wide md:flex-row md:space-y-0 md:space-x-1">
