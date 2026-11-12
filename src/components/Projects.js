@@ -29,7 +29,7 @@ const ProjectCard = () => {
                         <span className="absolute left-[33%] top-[116%] w-[33%] h-[3px] bg-secondary transition-all duration-300 "></span>
                     </h2>
                 </div>
-                <div className="space-y-10 "> target="_blank" rel="noopener noreferrer"
+                <div className="space-y-10 "> 
                     <section
                         ref={ref1}
                         className={`flex-col md:flex-row items-start justify-around group rounded-lg min-h-[25rem] border  border-black/5 overflow-hidden relative mb-3 sm:mb-8 last:mb-0 flex transition-all duration-700 ease-in-out ${inView1 ? "scale-100 bg-neutral shadow-[0px_0px_5px_0px_rgba(0,0,0,0)]  " : "bg-neutral/60 scale-90 opacity-60"
