@@ -99,6 +99,7 @@ const Toolbar = () => {
                                 className="px-4 py-1.5 text-lg font-bold transition-all duration-300 border-2 rounded-full group border-transparent hover:border-secondary">
                                 Kontaktai
                             </a>
+                            
                             <a onClick={handleDownload} href="CV_Zivile_Vibre.pdf" download
                                 className="text-secondary px-4 py-1.5 rounded-full text-lg font-bold transition-all duration-300 group hover:bg-secondary hover:text-primary">
                                 <div class="flex items-center justify-center gap-1">

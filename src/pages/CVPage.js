@@ -22,7 +22,7 @@ const CVPage = () => {
             window.scrollTo({
                 top: 0,
                 behavior: 'smooth' // or 'auto'
-              });
+            });
 
             const opt = {
                 margin: [0, 0, 0, 0],  // Explicitly set all margins to 0
@@ -35,7 +35,7 @@ const CVPage = () => {
             // Wait for scroll to happen, then generate PDF
             setTimeout(() => {
                 window.html2pdf().set(opt).from(element).save();
-            },300); // Slight delay to let scroll finish
+            }, 300); // Slight delay to let scroll finish
         } else {
             window.print(); // fallback
         }
@@ -72,14 +72,22 @@ const CVPage = () => {
                                 {/* Apie mane */}
                                 <section className="w-full mb-4 leading-tight">
                                     <p>
-                                        Esu ambicinga Jaunesnioji FULL-STACK (PHP, JavaScript) programuotoja, siekiantis vidutinio lygio, ieškanti naujų iššūkių IT srityje. Nesenai pasukau IT kryptimi.
+                                        Esu ambicinga Jaunesnioji FULL-STACK programuotoja, siekianti vidutinio lygio, ieškanti naujų iššūkių IT srityje. Nesenai pasukau IT kryptimi.
                                         <br />Turiu 2+ metų patirtį dirbant su Laravel karkasu vidinio programavimo ("Back-end") programuotoja.
                                         Taip pat neseniai baigiau 1 088 valandų intensyvius „JavaScript“ kursus, kuriuose gilinausi į React.js, Node.js, TypeScript bei web aplikacijų kūrimą.
-                                        <br />Esu atvira naujovėms, noriai mokausi ir stengius nuolat tobulėti, siekdama tapti stipria specialiste. Daugiau informacijos ir mano darbus rasite mano portfolio.
+                                        <br />Esu atvira naujovėms, noriai mokausi man patinka išbandyti naujus dalykus ir ieškoti sprendimų, todėl norėčiau prisidėti prie įvairių projektų bei įgyti daugiau praktinės patirties.
+
                                     </p>
                                 </section>
 
                                 {/* IT PATIRTIS */}
+                                <section className="mb-4 leading-tight">
+                                    <h4 className="p-0.5 pl-2 mb-2 font-light bg-gray-200">IT PATIRTIS</h4>
+                                    <div class="flex justify-between">
+                                        <div className="font-medium">2024 06 - dabar</div>
+                                        <p className="w-[75%]">IT specialistė, MB "tangent Z"<br />Kurti bei administruoti įmonės internetinę parduotuvę biolabs.lt. Darbas su WordPress. Puslapio dizaino ir funkcionalumo kūrimas, prekių valdymas.</p>
+                                    </div>
+                                </section>
                                 <section className="mb-4 leading-tight">
                                     <h4 className="p-0.5 pl-2 mb-2 font-light bg-gray-200">IT PATIRTIS</h4>
                                     <div class="flex justify-between">

@@ -10,7 +10,13 @@ const Experience = () => {
             </h2>
         </div>
 
-        <h5 className="mt-2 text-xl font-bold">MB "Suavis" jaunesnioji programuotoja</h5>
+        <h5 className="mt-2 text-xl font-bold">IT specialistė | MB „Tangent Z“</h5>
+        <span className="text-xl font-thin">2024 06 - dabar</span>
+        <p className='text-xl'>
+            Kurti bei administruoti įmonės internetinę parduotuvę biolabs.lt. Darbas su „WordPress“. Rūpinuosi parduovės priežiūra, prekių atnaujinimu ir kasdieniu jos veikimu.
+        </p>
+        <br/>
+          <h5 className="mt-2 text-xl font-bold">Jaunesnioji programuotoja | MB "Suavis" </h5>
         <span className="text-xl font-thin">2021 09 - 2024 01</span>
         <p className='text-xl'>
             Kurti bei administruoti įmonės tinklalapį traficero.com. Darbas su Laravel karkasu vidinio
