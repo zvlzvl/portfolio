@@ -29,12 +29,7 @@ const IndexPage = () => {
                         <div className="mt-2 text-xl font-light sm:text-3xl md:text-4xl">(jaunesnioji-vidutinio lygio)</div>
                     </h1>
                     <p className="mt-4 text-lg">
-                        Esu jaunesnioji programuotoja. Prieš 3 metus atradau IT sritį ir buvau labai
-                        maloniai nustebinta kaip ji mane užvaldė. Norėčiau Labai padėkoti už įkvėpimą pasukti IT keliu
-                        WomenGotech projektui, už pradinių žinių bei įgūdžių bagažą Baltijos technologijų
-                        intituto ir Code academy dėstytojams, bei pirmam darbdaviui integravusiam mane į "tikrą programavimo pasaulį"
-                        MB Suavis vadovui Aidui B.
-                    </p>
+                       Sveiki, esu Živilė. Mano išsilavinimas ir didžioji dalis darbo patirties susiję su vadyba, tačiau atradusi IT supratau, kad tai sritis, kurioje noriu mokytis ir augti. Daugiausia praktinės patirties įgijau dirbdama „Suavis“, kur kūriau ne tik svetainę, bet ir programos funkcionalumą. Šis darbas man suteikė galimybę pritaikyti programavimo žinias ir daug išmokti sprendžiant realias užduotis. Vėliau savo žinias gilinau mokymuose, kuriuose mokiausi „React“. Taip pat dirbdama MB „Tangent Z“, pasitelkusi „WordPress“ ir dirbtinio intelekto įrankius, atnaujinau „BioLabs“ svetainę. Šiuo metu šiek tiek prisidedu prie jos administravimo ir priežiūros. IT srityje dar ieškau savo krypties. Man patinka mokytis, išbandyti naujus dalykus ir ieškoti sprendimų, todėl norėčiau prisidėti prie įvairių projektų bei įgyti daugiau praktinės patirties. </p>
 
                 </div>
             </section>
