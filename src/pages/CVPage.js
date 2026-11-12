@@ -87,14 +87,14 @@ const CVPage = () => {
                                         <div className="font-medium">2024 06 - dabar</div>
                                         <p className="w-[75%]">IT specialistė, MB "tangent Z"<br />Kurti bei administruoti įmonės internetinę parduotuvę biolabs.lt. Darbas su WordPress. Puslapio dizaino ir funkcionalumo kūrimas, prekių valdymas.</p>
                                     </div>
-                                </section>
-                                <section className="mb-4 leading-tight">
-                                    <h4 className="p-0.5 pl-2 mb-2 font-light bg-gray-200">IT PATIRTIS</h4>
                                     <div class="flex justify-between">
                                         <div className="font-medium">2021 09 - 2024 01</div>
                                         <p className="w-[75%]">Jaunesnioji programuotoja, MB "Suavis"<br />Kurti bei administruoti įmonės tinklalapį traficero.com. Darbas su Laravel karkasu vidinio programavimo ("Back-end") programuotoja. Puslapio funkcionalumo kūrimas, duomenų bazių valdymas, sukurto WEB dizaino perkėlimas ir adaptavimas prie laravel karkaso.</p>
                                     </div>
                                 </section>
+
+
+
 
                                 {/* KT. PATIRTIS */}
                                 <section className="mb-4 leading-tight">
