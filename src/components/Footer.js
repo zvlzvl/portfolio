@@ -1,7 +1,7 @@
 
 import logo from "../assets/zvpilka.png";
 
-const Footer = () => {
+const Footer = ({language}) => {
     const scrollAnimate = (targetId) => {
         const targetElement = document.getElementById(targetId);
         console.log(targetElement);
@@ -21,21 +21,17 @@ const Footer = () => {
                     </a>
 
                     <nav className="flex flex-col items-center space-y-2 text-lg font-medium tracking-wide md:flex-row md:space-y-0 md:space-x-1">
-                        <a href="#education"
-                            onClick={(e) => {e.preventDefault(); scrollAnimate("education")}} className="px-4 md:py-1.5 text-lg font-bold transition-all duration-300 border-2 rounded-full group border-transparent md:hover:border-secondary hover:underline decoration-secondary md:decoration-transparent underline-offset-8 decoration-1" href="/#education">Išsilavinimas</a>
-                        <a href="#work"
-                            onClick={(e) => {e.preventDefault(); scrollAnimate("work")}} className="px-4 md:py-1.5 text-lg font-bold transition-all duration-300 border-2 rounded-full group border-transparent md:hover:border-secondary hover:underline decoration-secondary md:decoration-transparent underline-offset-8 decoration-1" href="/#work">Patirtis</a>
-                        <a href="#projects"
-                            onClick={(e) => {e.preventDefault(); scrollAnimate("projects")}} className="px-4 md:py-1.5 text-lg font-bold transition-all duration-300 border-2 rounded-full group border-transparent md:hover:border-secondary hover:underline decoration-secondary md:decoration-transparent underline-offset-8 decoration-1" href="/#projects">Projektai</a>
-                        <a href="#contacts"
-                            onClick={(e) => {e.preventDefault(); scrollAnimate("contacts")}} className="px-4 md:py-1.5 text-lg font-bold transition-all duration-300 border-2 rounded-full group border-transparent md:hover:border-secondary hover:underline decoration-secondary md:decoration-transparent underline-offset-8 decoration-1" href="/#contacts">Kontaktai</a>
+                        <a onClick={(e) => {e.preventDefault(); scrollAnimate("education")}} className="px-4 md:py-1.5 text-lg font-bold transition-all duration-300 border-2 rounded-full group border-transparent md:hover:border-secondary hover:underline decoration-secondary md:decoration-transparent underline-offset-8 decoration-1" href="/#education">{language === 'lt' ? 'Išsilavinimas' : 'Education'}</a>
+                        <a onClick={(e) => {e.preventDefault(); scrollAnimate("work")}} className="px-4 md:py-1.5 text-lg font-bold transition-all duration-300 border-2 rounded-full group border-transparent md:hover:border-secondary hover:underline decoration-secondary md:decoration-transparent underline-offset-8 decoration-1" href="/#work">{language === 'lt' ? 'Patirtis' : 'Experience'}</a>
+                        <a onClick={(e) => {e.preventDefault(); scrollAnimate("projects")}} className="px-4 md:py-1.5 text-lg font-bold transition-all duration-300 border-2 rounded-full group border-transparent md:hover:border-secondary hover:underline decoration-secondary md:decoration-transparent underline-offset-8 decoration-1" href="/#projects">{language === 'lt' ? 'Projektai' : 'Projects'}</a>
+                        <a onClick={(e) => {e.preventDefault(); scrollAnimate("contacts")}} className="px-4 md:py-1.5 text-lg font-bold transition-all duration-300 border-2 rounded-full group border-transparent md:hover:border-secondary hover:underline decoration-secondary md:decoration-transparent underline-offset-8 decoration-1" href="/#contacts">{language === 'lt' ? 'Kontaktai' : 'Contacts'}</a>
                     </nav>
                 </div>
 
 
                 {/* Bottom Row */}
                 <div className="flex flex-col items-center justify-center w-full gap-4 p-6 md:justify-between md:flex-row">
-                    <span className="tracking-[2px] font-thin">2022 - 2025 © Živilė Vibrė</span>
+                    <span className="tracking-[2px] font-thin">2022 - {new Date().getFullYear()} © Živilė Vibrė</span>
                     <div className="flex items-center gap-4">
                         <a href="https://www.linkedin.com/in/zivilevibre" target="_blank" rel="noopener noreferrer">
                             <svg width="30" height="31"
