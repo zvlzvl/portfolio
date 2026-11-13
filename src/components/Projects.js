@@ -54,7 +54,7 @@ const ProjectCard = () => {
                                     CSS
                                 </li>
                             </ul>
-                            <div className="leading-relaxed mt-7 text-slate-700 dark:text-white/70">
+                            <div className="leading-relaxed mt-7 text-white/70">
                                 <h5 className="font-bold">Mano funkcijos:</h5>
                                 <ul>
                                     <li className="list-disc">pasitelkdama „WordPress“ ir dirbtinio intelekto įrankius, atnaujinau „BioLabs“ internetinę parduotuvę.</li>
@@ -117,7 +117,7 @@ const ProjectCard = () => {
                                     CSS
                                 </li>
                             </ul>
-                            <div className="leading-relaxed mt-7 text-slate-700 dark:text-white/70">
+                            <div className="leading-relaxed mt-7 text-white/70">
                                 <h5 className="font-bold">Mano funkcijos:</h5>
                                 <ul>
                                     <li className="list-disc">puslapio funkcionalumo programavimas bei kūrimas (back-end)</li>
@@ -168,7 +168,7 @@ const ProjectCard = () => {
                                     Elementor
                                 </li>
                             </ul>
-                            <div className="leading-relaxed mt-7 text-slate-700 dark:text-white/70">
+                            <div className="leading-relaxed mt-7 text-white/70">
                                 <h5 className="font-bold">Mano funkcijos:</h5>
                                 <ul>
                                     <li className="list-disc">puslapio dizaino kūrimas pasitelkiant WordPress ir Elementor</li>
