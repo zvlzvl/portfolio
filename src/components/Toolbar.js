@@ -159,22 +159,22 @@ const Toolbar = ({language, setLanguage}) => {
                             <a href="#education"
                                 onClick={(e) => {e.preventDefault(); scrollAnimate("education"); setOpen(false)}}
                                 className="block pb-2 m-1 font-medium border-2 border-transparent rounded-sm text-primary-content md:p-0 hover:border-b-secondary">
-                                Išsilavinimas
+                                {language === 'lt' ? 'Išsilavinimas' : 'Education'}
                             </a>
                             <a href="#work"
                                 onClick={(e) => {e.preventDefault(); scrollAnimate("work"); setOpen(false)}}
                                 className="block pb-2 m-1 font-medium border-2 border-transparent rounded-sm text-primary-content md:p-0 hover:border-b-secondary">
-                                Patirtis
+                                {language === 'lt' ? 'Patirtis' : 'Experience'}
                             </a>
                             <a href="#projects"
                                 onClick={(e) => {e.preventDefault(); scrollAnimate("projects"); setOpen(false)}}
                                 className="block pb-2 m-1 font-medium border-2 border-transparent rounded-sm text-primary-content md:p-0 hover:border-b-secondary">
-                                Projektai
+                                {language === 'lt' ? 'Projektai' : 'Projects'}
                             </a>
                             <a href="#contacts"
                                 onClick={(e) => {e.preventDefault(); scrollAnimate("contacts"); setOpen(false)}}
                                 className="block pb-2 m-1 font-medium border-2 border-transparent rounded-sm text-primary-content md:p-0 hover:border-b-secondary">
-                                Kontaktai
+                                {language === 'lt' ? 'Kontaktai' : 'Contacts'}
                             </a>
                             <a onClick={(e) => {handleDownload(e); setOpen(false);}} href={cvFile} download={cvFile}
                                 className="px-4  text-lg font-bold transition-all duration-300 cursor-pointer text-secondary group  w-[100px] ">

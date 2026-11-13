@@ -26,7 +26,7 @@ const IndexPage = ({language}) => {
                             <div className="text-4xl font-thin md:text-6xl">Full-stack</div>
                             <div className="hidden text-4xl font-medium sm:flex md:text-6xl"> {language === 'lt' ? 'Programuotoja' : 'Developer'} </div>
                         </div>
-                        <div className="text-4xl font-medium sm:hidden"> Programuotoja </div>
+                        <div className="text-4xl font-medium sm:hidden"> {language === 'lt' ? 'Programuotoja' : 'Developer'} </div>
                         <div className="mt-2 text-xl font-light sm:text-3xl md:text-4xl">{language === 'lt' ? '(jaunesnioji-vidutinio lygio)' : '(Junior to Mid-Level)'}</div>
                     </h1>
                     <p className="mt-4 text-lg">
