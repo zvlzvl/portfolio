@@ -2,18 +2,19 @@
 import {useState, useEffect} from "react";
 import logo from "../assets/zlogo.png";
 import {Loader2} from 'lucide-react'; // Spinner icon, optional if you use Lucide or can use emoji/spinner SVG
-const Toolbar = () => {
+const Toolbar = ({language, setLanguage}) => {
     const [open, setOpen] = useState(false);
     const [isActive, setIsActive] = useState(false);
     const [isDownloading, setIsDownloading] = useState(false);
 
-    const handleDownload = (e) => {
 
+    const handleDownload = (e) => {
+        e.preventDefault();
         setIsDownloading(true);
         // Create a temporary <a> tag to trigger download manually
         const link = document.createElement('a');
-        link.href = 'CV_Zivile_Vibre.pdf';
-        link.download = 'CV_Zivile_Vibre.pdf';
+        link.href = language === 'lt' ? 'CV_Zivile_Vibre.pdf' : 'CV_Zivile_Vibre_en.pdf';
+        link.download = language === 'lt' ? 'CV_Zivile_Vibre.pdf' : 'CV_Zivile_Vibre_en.pdf';
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
@@ -57,7 +58,10 @@ const Toolbar = () => {
         }
     };
 
-
+    const cvFile =
+        language === 'lt'
+            ? 'CV_Zivile_Vibre.pdf'
+            : 'CV_Zivile_Vibre_en.pdf';
 
 
 
@@ -82,25 +86,25 @@ const Toolbar = () => {
                             <a href="#education"
                                 onClick={(e) => {e.preventDefault(); scrollAnimate("education")}}
                                 className="px-4 py-1.5 text-lg font-bold transition-all duration-300 border-2 rounded-full group border-transparent hover:border-secondary">
-                                Išsilavinimas
+                                {language === 'lt' ? 'Išsilavinimas' : 'Education'}
                             </a>
                             <a href="#work"
                                 onClick={(e) => {e.preventDefault(); scrollAnimate("work")}}
                                 className="px-4 py-1.5 text-lg font-bold transition-all duration-300 border-2 rounded-full group border-transparent hover:border-secondary">
-                                Patirtis
+                                {language === 'lt' ? 'Patirtis' : 'Experience'}
                             </a>
                             <a href="#projects"
                                 onClick={(e) => {e.preventDefault(); scrollAnimate("projects")}}
                                 className="px-4 py-1.5 text-lg font-bold transition-all duration-300 border-2 rounded-full group border-transparent hover:border-secondary">
-                                Projektai
+                                {language === 'lt' ? 'Projektai' : 'Projects'}
                             </a>
                             <a href="#contacts"
                                 onClick={(e) => {e.preventDefault(); scrollAnimate("contacts")}}
                                 className="px-4 py-1.5 text-lg font-bold transition-all duration-300 border-2 rounded-full group border-transparent hover:border-secondary">
-                                Kontaktai
+                                {language === 'lt' ? 'Kontaktai' : 'Contacts'}
                             </a>
-                            
-                            <a onClick={handleDownload} href="CV_Zivile_Vibre.pdf" download
+
+                            <a href={cvFile} download={cvFile} onClick={handleDownload}
                                 className="text-secondary px-4 py-1.5 rounded-full text-lg font-bold transition-all duration-300 group hover:bg-secondary hover:text-primary">
                                 <div class="flex items-center justify-center gap-1">
                                     {isDownloading ? (
@@ -119,9 +123,22 @@ const Toolbar = () => {
 
                                 </div>
                             </a>
+                            <button
+                                type="button" className="px-4 py-1.5 text-lg hover:text-black transition-all duration-300 "
+                                onClick={() => setLanguage(language === 'lt' ? 'en' : 'lt')}>
+                                {language === 'lt' ? 'EN' : 'LT'}
+                            </button>
+
+
                         </div>
                         {/* Mobile */}
-                        <button onClick={() => setOpen(!open)} className="p-2 text-primary-content md:hidden">
+                        <div className="flex items-center gap-2 md:hidden">
+                            <button className="text-xl transition-all duration-300 text-primary-content"
+                            type="button"
+                            onClick={() => setLanguage(language === 'lt' ? 'en' : 'lt')}>
+                            {language === 'lt' ? 'EN' : 'LT'}
+                        </button>
+                        <button onClick={() => setOpen(!open)} className="p-2 text-primary-content">
                             {open ? (
                                 <svg className="w-8 h-8" viewBox="0 0 24 24">
                                     <path stroke="currentColor" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
@@ -132,6 +149,8 @@ const Toolbar = () => {
                                 </svg>
                             )}
                         </button>
+                        </div>
+                        
                     </nav>
 
                     {/* Mobile Dropdown Menu */}
@@ -157,7 +176,7 @@ const Toolbar = () => {
                                 className="block pb-2 m-1 font-medium border-2 border-transparent rounded-sm text-primary-content md:p-0 hover:border-b-secondary">
                                 Kontaktai
                             </a>
-                            <a onClick={() => setOpen(false)} href="CV_Zivile_Vibre.pdf" download
+                            <a onClick={(e) => {handleDownload(e); setOpen(false);}} href={cvFile} download={cvFile}
                                 className="px-4  text-lg font-bold transition-all duration-300 cursor-pointer text-secondary group  w-[100px] ">
                                 <div class="flex items-center gap-1">
                                     CV
@@ -172,6 +191,7 @@ const Toolbar = () => {
 
                                 </div>
                             </a>
+
                             {/* <a onClick={() => setOpen(false)} href="/cv"
                                 className="block pb-2 m-1 font-medium border-2 border-transparent rounded-sm text-primary-content md:p-0 hover:border-b-secondary">
                                 CV

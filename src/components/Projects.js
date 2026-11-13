@@ -4,7 +4,7 @@ import bitmanijaImg from "../../src/assets/bitmanija/bitmanija.png";
 import biolabsImg from "../../src/assets/biolabs/biolabs.png";
 import {useInView} from "react-intersection-observer";
 
-const ProjectCard = () => {
+const ProjectCard = ({language}) => {
 
     const [ref1, inView1] = useInView({
         threshold: 0.4,
@@ -25,42 +25,56 @@ const ProjectCard = () => {
         <section className="pt-6 bg-primary-content text-primary" >
             <div className="flex flex-col justify-center px-6 mx-auto max-w-[1150px]">
                 <div className="pb-16 text-center">
-                    <h2 className="relative inline-block mx-auto text-5xl font-medium transition-all duration-300 text-primary group">Mano projektai
+                    <h2 className="relative inline-block mx-auto text-5xl font-medium transition-all duration-300 text-primary group">{language === 'lt' ? 'Mano projektai' : 'My Projects'}
                         <span className="absolute left-[33%] top-[116%] w-[33%] h-[3px] bg-secondary transition-all duration-300 "></span>
                     </h2>
                 </div>
-                <div className="space-y-10 "> 
+                <div className="space-y-10 ">
                     <section
                         ref={ref1}
                         className={`flex-col md:flex-row items-start justify-around group rounded-lg min-h-[25rem] border  border-black/5 overflow-hidden relative mb-3 sm:mb-8 last:mb-0 flex transition-all duration-700 ease-in-out ${inView1 ? "scale-100 bg-neutral shadow-[0px_0px_5px_0px_rgba(0,0,0,0)]  " : "bg-neutral/60 scale-90 opacity-60"
                             }`}
                     >
                         <div className="flex flex-col order-2 w-full h-full px-5 pt-4 pb-4 md:order-2 sm:pl-10 sm:pr-2 sm:pt-10">
-                            <h3 className="text-2xl font-semibold">Biolabs.lt <em class="thin">(Internetinė parduotuvė)</em></h3>
+                            <h3 className="text-2xl font-semibold">Biolabs.lt <em class="thin">{language === 'lt'
+                                ? 'Internetinė parduotuvė'
+                                : 'Online store'}</em></h3>
                             <ul className="flex flex-wrap gap-2 mt-4">
-                                <li className="bg-slate-950/[0.7] px-3 py-1 font-semibold text-[0.60rem] uppercase tracking-wider text-white rounded-full">
+                                <li className="bg-slate-950/[0.7] px-3 py-1 text-[0.65rem] uppercase tracking-wider text-white rounded-full">
                                     WordPress
                                 </li>
-                                <li className="bg-slate-950/[0.7] px-3 py-1 font-semibold text-[0.60rem] uppercase tracking-wider text-white rounded-full ">
+                                <li className="bg-slate-950/[0.7] px-3 py-1 text-[0.65rem] uppercase tracking-wider text-white rounded-full ">
                                     Elementor
                                 </li>
-                                <li className="bg-slate-950/[0.7] px-3 py-1 font-semibold text-[0.60rem] uppercase tracking-wider text-white rounded-full ">
+                                <li className="bg-slate-950/[0.7] px-3 py-1 text-[0.65rem] uppercase tracking-wider text-white rounded-full ">
                                     PHP
                                 </li>
-                                <li className="bg-slate-950/[0.7] px-3 py-1 font-semibold text-[0.60rem] uppercase tracking-wider text-white rounded-full ">
+                                <li className="bg-slate-950/[0.7] px-3 py-1 text-[0.65rem] uppercase tracking-wider text-white rounded-full ">
                                     HTML
                                 </li>
-                                <li className="bg-slate-950/[0.7] px-3 py-1 text-[0.60rem] uppercase tracking-wider text-white rounded-full ">
+                                <li className="bg-slate-950/[0.7] px-3 py-1 text-[0.65rem] uppercase tracking-wider text-white rounded-full ">
                                     CSS
                                 </li>
                             </ul>
                             <div className="leading-relaxed mt-7 text-white/70">
-                                <h5 className="font-bold">Mano funkcijos:</h5>
+                                <h5 className="font-bold">{language === 'lt'
+                                    ? 'Mano funkcijos:'
+                                    : 'My responsibilities:'}</h5>
                                 <ul>
-                                    <li className="list-disc">pasitelkdama „WordPress“ ir dirbtinio intelekto įrankius, atnaujinau „BioLabs“ internetinę parduotuvę.</li>
-                                    <li className="list-disc">puslapio funkcionalumo atnaujimas, papildymas, korekcija.
+                                    <li className="list-disc">
+                                        {language === 'lt'
+                                            ? 'Naudodama „WordPress“ ir dirbtinio intelekto įrankius, atnaujinau „BioLabs“ internetinę parduotuvę.'
+                                            : 'Updated the BioLabs online store using WordPress and AI tools.'}
                                     </li>
-                                    <li className="list-disc">šiuo metu atlieku svetainės administravimą ir priežiūrą.
+                                    <li className="list-disc">
+                                        {language === 'lt'
+                                            ? 'Atnaujinau, papildžiau ir koregavau svetainės funkcionalumą.'
+                                            : 'Updated, expanded and adjusted the website’s functionality.'}
+                                    </li>
+                                    <li className="list-disc">
+                                        {language === 'lt'
+                                            ? 'Šiuo metu administruoju ir prižiūriu svetainę.'
+                                            : 'Currently administer and maintain the website.'}
                                     </li>
                                 </ul>
                             </div>
@@ -72,7 +86,9 @@ const ProjectCard = () => {
                                 <a href="https://biolabs.lt/" target="_blank" rel="noopener noreferrer">
                                     <img alt="biolabs" className="object-cover w-full h-full rounded-lg" src={biolabsImg} />
                                     <span className="absolute inset-0 flex items-center justify-center text-lg text-white transition-opacity duration-300 rounded-lg opacity-100 bg-black/60 md:opacity-0 md:hover:opacity-100 md:focus-visible:opacity-100">
-                                        Apsilankyti svetainėje ↗
+                                        {language === 'lt'
+                                            ? 'Apsilankyti svetainėje ↗'
+                                            : 'Visit website ↗'}
                                     </span>
                                 </a>
                             </div>
@@ -89,50 +105,75 @@ const ProjectCard = () => {
                             }`}
                     >
                         <div className="flex flex-col order-2 w-full h-full px-5 pt-4 pb-4 md:order-2 sm:pl-10 sm:pr-2 sm:pt-10">
-                            <h3 className="text-2xl font-semibold">Traficero.com <em class="thin">(jūrinių konteinerių sekimo
-                                programa)</em></h3>
+                            <h3 className="text-2xl font-semibold">Traficero.com <em class="thin">{language === 'lt'
+                                ? '(jūrinių konteinerių sekimo programa)'
+                                : '(shipping container tracking application)'}</em></h3>
                             <ul className="flex flex-wrap gap-2 mt-4">
-                                <li className="bg-slate-950/[0.7] px-3 py-1 font-semibold text-[0.60rem] uppercase tracking-wider text-white rounded-full ">
+                                <li className="bg-slate-950/[0.7] px-3 py-1 text-[0.65rem] uppercase tracking-wider text-white rounded-full ">
                                     Laravel
                                 </li>
-                                <li className="bg-slate-950/[0.7] px-3 py-1 font-semibold text-[0.60rem] uppercase tracking-wider text-white rounded-full ">
+                                <li className="bg-slate-950/[0.7] px-3 py-1 text-[0.65rem] uppercase tracking-wider text-white rounded-full ">
                                     MySQL
                                 </li>
-                                <li className="bg-slate-950/[0.7] px-3 py-1 font-semibold text-[0.60rem] uppercase tracking-wider text-white rounded-full ">
+                                <li className="bg-slate-950/[0.7] px-3 py-1 text-[0.65rem] uppercase tracking-wider text-white rounded-full ">
                                     Back-End
                                 </li>
-                                <li className="bg-slate-950/[0.7] px-3 py-1 font-semibold text-[0.60rem] uppercase tracking-wider text-white rounded-full ">
+                                <li className="bg-slate-950/[0.7] px-3 py-1 text-[0.65rem] uppercase tracking-wider text-white rounded-full ">
                                     Functional Testing
                                 </li>
-                                <li className="bg-slate-950/[0.7] px-3 py-1 font-semibold text-[0.60rem] uppercase tracking-wider text-white rounded-full ">
+                                <li className="bg-slate-950/[0.7] px-3 py-1 text-[0.65rem] uppercase tracking-wider text-white rounded-full ">
                                     PHP Pest
                                 </li>
-                                <li className="bg-slate-950/[0.7] px-3 py-1 font-semibold text-[0.60rem] uppercase tracking-wider text-white rounded-full ">
+                                <li className="bg-slate-950/[0.7] px-3 py-1 text-[0.65rem] uppercase tracking-wider text-white rounded-full ">
                                     PHP
                                 </li>
-                                <li className="bg-slate-950/[0.7] px-3 py-1 font-semibold text-[0.60rem] uppercase tracking-wider text-white rounded-full ">
+                                <li className="bg-slate-950/[0.7] px-3 py-1 text-[0.65rem] uppercase tracking-wider text-white rounded-full ">
                                     HTML
                                 </li>
-                                <li className="bg-slate-950/[0.7] px-3 py-1 font-semibold text-[0.60rem] uppercase tracking-wider text-white rounded-full ">
+                                <li className="bg-slate-950/[0.7] px-3 py-1 text-[0.65rem] uppercase tracking-wider text-white rounded-full ">
                                     CSS
                                 </li>
                             </ul>
                             <div className="leading-relaxed mt-7 text-white/70">
-                                <h5 className="font-bold">Mano funkcijos:</h5>
+                                <h5 className="font-bold">{language === 'lt'
+                                    ? 'Mano funkcijos:'
+                                    : 'My responsibilities:'}</h5>
                                 <ul>
-                                    <li className="list-disc">puslapio funkcionalumo programavimas bei kūrimas (back-end)</li>
-                                    <li className="list-disc">sukurto ir suprogramuoto dizaino perkėlimas ir
-                                        adaptavimas prie Laravel blade formato (front-end)
+                                    <li className="list-disc">
+                                        {language === 'lt'
+                                            ? 'Programos funkcionalumo kūrimas (back-end).'
+                                            : 'Development of application functionality (back-end).'}
                                     </li>
-                                    <li className="list-disc">gautų duomenų apie konteinerių buvimo vietą
-                                        apdorojimas, susisteminimas į duomenų bazes bei pateikimas klientui
+                                    <li className="list-disc">
+                                        {language === 'lt'
+                                            ? 'Sukurto ir suprogramuoto dizaino perkėlimas bei pritaikymas „Laravel Blade“ šablonams (front-end).'
+                                            : 'Implementation and adaptation of the provided design using Laravel Blade templates (front-end).'}
                                     </li>
-                                    <li className="list-disc">kliento prisijungimo sistema, jo sekamų konteinerių
-                                        ataskaita, pranešimai, filtravimas, rūšiavimas, duomenų eksportavimas į excel
+                                    <li className="list-disc">
+                                        {language === 'lt'
+                                            ? 'Duomenų apie konteinerių buvimo vietą apdorojimas, saugojimas duomenų bazėse ir pateikimas klientams.'
+                                            : 'Processing container location data, storing it in databases and presenting it to clients.'}
                                     </li>
-                                    <li className="list-disc">apmokėjimo sistemos integracija</li>
-                                    <li className="list-disc">API klientams kūrimas</li>
-                                    <li className="list-disc">testai,validacijos.</li>
+                                    <li className="list-disc">
+                                        {language === 'lt'
+                                            ? 'Klientų prisijungimo sistemos, sekamų konteinerių ataskaitų, pranešimų, filtravimo, rūšiavimo ir duomenų eksporto į „Excel“ kūrimas.'
+                                            : 'Development of client login, tracked container reports, notifications, filtering, sorting and data export to Excel.'}
+                                    </li>
+                                    <li className="list-disc">
+                                        {language === 'lt'
+                                            ? 'Mokėjimo sistemos integravimas.'
+                                            : 'Payment system integration.'}
+                                    </li>
+                                    <li className="list-disc">
+                                        {language === 'lt'
+                                            ? 'API kūrimas klientams.'
+                                            : 'API development for clients.'}
+                                    </li>
+                                    <li className="list-disc">
+                                        {language === 'lt'
+                                            ? 'Testavimas ir duomenų validacija.'
+                                            : 'Testing and data validation.'}
+                                    </li>
 
                                 </ul>
                             </div>
@@ -143,7 +184,9 @@ const ProjectCard = () => {
                                 <div>
                                     <img alt="traficero" className="object-cover w-full h-full rounded-lg" src={traficeroImg} />
                                     <span className="absolute inset-0 flex items-center justify-center text-lg text-white transition-opacity duration-300 rounded-lg opacity-100 bg-black/60 md:opacity-0 md:hover:opacity-100 md:focus-visible:opacity-100">
-                                        Apgailestauju, bet puslapis uždarytas
+                                        {language === 'lt'
+                                            ? 'Deja, svetainė nebeveikia.'
+                                            : 'Unfortunately, the website is no longer available.'}
                                     </span>
                                 </div>
                             </div>
@@ -159,20 +202,32 @@ const ProjectCard = () => {
                             }`}
                     >
                         <div className="flex flex-col order-1 w-full h-full px-5 pt-4 pb-4 sm:pl-10 sm:pr-2 sm:pt-10 md:order-1">
-                            <h3 className="text-2xl font-semibold">bitmanija.lt <em class="thin">(internetinė parduotuvė)</em></h3>
+                            <h3 className="text-2xl font-semibold">bitmanija.lt <em class="thin">{language === 'lt'
+                                ? 'Internetinė parduotuvė'
+                                : 'Online store'}</em></h3>
                             <ul className="flex flex-wrap gap-2 mt-4">
-                                <li className="bg-slate-950/[0.7] px-3 py-1 font-semibold text-[0.60rem] uppercase tracking-wider text-white rounded-full">
+                                <li className="bg-slate-950/[0.7] px-3 py-1 text-[0.65rem] uppercase tracking-wider text-white rounded-full">
                                     WordPress
                                 </li>
-                                <li className="bg-slate-950/[0.7] px-3 py-1 font-semibold text-[0.60rem] uppercase tracking-wider text-white rounded-full ">
+                                <li className="bg-slate-950/[0.7] px-3 py-1 text-[0.65rem] uppercase tracking-wider text-white rounded-full ">
                                     Elementor
                                 </li>
                             </ul>
                             <div className="leading-relaxed mt-7 text-white/70">
-                                <h5 className="font-bold">Mano funkcijos:</h5>
+                                <h5 className="font-bold">{language === 'lt'
+                                    ? 'Mano funkcijos:'
+                                    : 'My responsibilities:'}</h5>
                                 <ul>
-                                    <li className="list-disc">puslapio dizaino kūrimas pasitelkiant WordPress ir Elementor</li>
-                                    <li className="list-disc">mokėjimo sistemos integravimas</li>
+                                    <li className="list-disc">
+                                        {language === 'lt'
+                                            ? 'Svetainės dizaino kūrimas naudojant „WordPress“ ir „Elementor“.'
+                                            : 'Website design using WordPress and Elementor.'}
+                                    </li>
+                                    <li className="list-disc">
+                                        {language === 'lt'
+                                            ? 'Mokėjimo sistemos integravimas.'
+                                            : 'Payment system integration.'}
+                                    </li>
                                 </ul>
                             </div>
 
@@ -182,7 +237,9 @@ const ProjectCard = () => {
                                 <a href="https://bitmanija.lt/" target="_blank" rel="noopener noreferrer">
                                     <img alt="bitmanija" className="object-cover w-full h-full rounded-lg" src={bitmanijaImg} />
                                     <span className="absolute inset-0 flex items-center justify-center text-lg text-white transition-opacity duration-300 rounded-lg opacity-100 bg-black/60 md:opacity-0 md:hover:opacity-100 md:focus-visible:opacity-100">
-                                        Apsilankyti svetainėje ↗
+                                        {language === 'lt'
+                                            ? 'Apsilankyti svetainėje ↗'
+                                            : 'Visit website ↗'}
                                     </span>
                                 </a>
                             </div>
