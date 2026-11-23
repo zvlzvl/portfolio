@@ -75,3 +75,24 @@ body {
 ::selection {
     background: none;
 }
+
+@media print {
+  @page { size: A4; margin: 8mm; }
+  /* spausdinamas tik CV: meniu, toolbar ir mygtukas pasislepia */
+  body * { visibility: hidden; }
+  #cv-content-inner, #cv-content-inner * { visibility: visible; }
+  #cv-content-inner {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    max-width: none;
+    margin: 0;
+     zoom: 0.94374;  
+  }
+  /* išlieka fono spalvos (pilki antraščių fonai, header) */
+  * {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+}

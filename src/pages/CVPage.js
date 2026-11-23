@@ -1,60 +1,31 @@
-import React, {useEffect, useRef} from 'react';
+import React from 'react';
 
 const CVPage = ({language}) => {
-    const cvRef = useRef(null);
-
-    useEffect(() => {
-        const script = document.createElement('script');
-        script.src = 'https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js';
-        script.async = true;
-        document.body.appendChild(script);
-
-        return () => {
-            document.body.removeChild(script);
-        };
-    }, []);
-
     const handleDownload = () => {
-        // Check if html2pdf is loaded and element exists
-        if (window.html2pdf && cvRef.current) {
-            const element = document.getElementById('cv-content-inner');
-            // Scroll CV into view before rendering
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth' // or 'auto'
-            });
-
-            const opt = {
-                margin: [0, 0, 0, 0],  // Explicitly set all margins to 0
-                filename: language === 'lt' ? 'CV_Zivile_Vibre.pdf' : 'CV_Zivile_Vibre_en.pdf',
-                image: {type: 'jpeg', quality: 0.98},
-                html2canvas: {scale: 2, useCORS: true},
-                jsPDF: {unit: 'mm', format: 'a4', orientation: 'portrait'},
-                pagebreak: {mode: ['avoid-all']}  // Try to avoid page breaks
-            };
-            // Wait for scroll to happen, then generate PDF
-            setTimeout(() => {
-                window.html2pdf().set(opt).from(element).save();
-            }, 300); // Slight delay to let scroll finish
-        } else {
-            window.print(); // fallback
-        }
+        // Chrome PDF failą pavadina pagal document.title
+        const oldTitle = document.title;
+        document.title = language === 'lt' ? 'CV_Zivile_Vibre' : 'CV_Zivile_Vibre_en';
+        const restore = () => {
+            document.title = oldTitle;
+            window.removeEventListener('afterprint', restore);
+        };
+        window.addEventListener('afterprint', restore);
+        window.print();
     };
 
 return (
   <div>
-    <div className="flex flex-col items-center min-h-screen px-4 pt-0 mt-[100px]">
-        {/* mt-[-300px] is used to offset the height of the toolbar, so that the CV content is not hidden behind it. This is a common technique when using fixed headers or toolbars in web design. */}
+    <div className="flex flex-col items-center min-h-screen px-4 pt-0 mt-[100px] print:mt-0 print:min-h-0 print:p-0">
+      
       {/* CV */}
       <div
-        ref={cvRef}
         id="cv-content-inner"
         className="w-full max-w-4xl mx-auto my-0 bg-white"
       >
         <div className="flex flex-col h-full p-8">
           {/* Header */}
           <section className="py-6 mb-3 text-center bg-primary-content">
-            <div className="pb-6 text-center">
+            <div className="text-center pb-7">
               <h2 className="relative inline-block mx-auto text-4xl font-thin transition-all duration-300 text-primary group">
                 ŽIVILĖ VIBRĖ
                 <span className="absolute left-[33%] top-[116%] w-[33%] h-[3px] bg-secondary transition-all duration-300"></span>
