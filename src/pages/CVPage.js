@@ -119,8 +119,8 @@ return (
                 <div className="flex justify-between">
                   <div className="font-medium">
                     {language === 'lt'
-                      ? '2012 09 – 2019 10'
-                      : 'Sept 2012 – Oct 2019'}
+                      ? '2012 09 – 2015 01'
+                      : 'Sept 2012 – Jan 2015'}
                   </div>
                   <p className="w-[75%]">
                     {language === 'lt'
